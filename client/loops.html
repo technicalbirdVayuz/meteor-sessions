@@ -1,0 +1,10 @@
+
+<template name="loops">
+Loops Template
+{{#each fetch_posts}}
+  {{#unless divible_by_2 post}}
+      False: <b>{{post}}</b> <br>
+    {{/unless}}
+{{/each}}
+
+</template>

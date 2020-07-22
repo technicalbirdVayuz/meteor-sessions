@@ -1,28 +1,36 @@
 
 <template name="hello">
-  {{> info}}
-  <button> Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+Hello Template
+<a href="/b">Another Route</a>
+<br>
+Basic Helper: {{test}}
+<br>
+Loop:
+{{#each fetch_posts}}
+  {{post}}
+  {{else}}
+  No Value in Fetch Post array
+{{/each}}
+<br>
+Triple Brackets:
+{{{testing}}}
+<br>
+<br>
+{{#each fetch_posts}}
+  {{#if divible_by_2 post}}
+      <b>{{post}}</b> <br>
+    {{else}}
+      Not Divisible :{{post}}
+    {{/if}}
+{{/each}}
+<br>
 
-   <button> Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
 
-   <button> Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-   <button> Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+---------
+{{#each fetch_posts}}
+  {{#unless divible_by_2 post}}
+      False: <b>{{post}}</b> <br>
+    {{/unless}}
+{{/each}}
 
-   <button> Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-
-</template>
-
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
 </template>

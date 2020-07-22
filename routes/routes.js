@@ -9,9 +9,9 @@ FlowRouter.route('/a', {
 
 });
 
-FlowRouter.route('/b/:id', {
+FlowRouter.route('/b', {
     action: function(params, queryParams) {
-        BlazeLayout.render('info')
+        BlazeLayout.render('loops')
     },
     title: 'Title ' + Utils.absoluteUrl()
 });
