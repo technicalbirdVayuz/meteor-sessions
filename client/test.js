@@ -1,29 +1,11 @@
+import { Todo } from './../collections/collections';
 Template.hello.helpers({
-	test:function(){
-		return "<b>Abcd</b>";
-	},
-	fetch_posts:function(){
-		var array = [];
 
-		for(i=1;i<=5;i++){
-			array.push({
-				post:i
-			});
-		}
-		return array;
-	},testing(){
-		return "<b>abcd</b>";
-	},
+	fetch_all_posts:function(){
+		var data = Todo.find({}).fetch()
+		console.log(data);
+		console.log("data");
+		return data;
+		},
 
-})
-Template.hello.onCreated(function(){
-	// alert("on Created");
-})
-
-Template.hello.onRendered(function(){
-	// alert("on Rendered");
-})
-
-Template.hello.onDestroyed(function(){
-	// alert("on Destroyed");
 })
