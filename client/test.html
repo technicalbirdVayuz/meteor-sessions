@@ -1,5 +1,6 @@
 
 <template name="hello">
+
 Todo
 
 <br>
@@ -7,4 +8,9 @@ Todo
   {{#each fetch_all_posts}}
   {{name}} <br>
   {{/each}}
+
+  <input name="abcd" type="text" id="simple_input">
+  <button id="submit_btn">Submit<span class="display_hidden" id="loading_text"> (Loading) </span></button>
+
+
 </template>
