@@ -6,6 +6,9 @@ Template.hello.helpers({
 
 	fetch_all_posts:function(){
 		var data = Todo.find({}).fetch()
+		for(var i=0;i<data.length;i++){
+			data[i].abcd = 0;
+		}
 		console.log(data);
 		console.log("data");
 		return data;
@@ -15,6 +18,39 @@ Template.hello.helpers({
 
 
 Template.hello.events({
+	"click #delete_task":function(event){
+		event.preventDefault();
+	
+		var obj = {};
+		obj._id = this._id;
+		
+		Meteor.call("delete_task", obj,function(error,result){
+				if(error){
+					alert("Something went wrong!");
+				}else{
+					// $("#loading_text").addClass("display_hidden");
+					// $("#simple_input").val("")	
+				}
+			});
+	},
+	"click #btn_in_loop":function(event){
+		event.preventDefault();
+		console.log(this);
+	
+		var obj = {};
+		obj._id = this._id;
+		var newValue = prompt("Enter new value");
+
+		obj.name = newValue;
+		Meteor.call("update_task", obj,function(error,result){
+				if(error){
+					alert("Something went wrong!");
+				}else{
+					// $("#loading_text").addClass("display_hidden");
+					// $("#simple_input").val("")	
+				}
+			});
+	},
 	"click #submit_btn":function(event){
 		event.preventDefault();
 		var input = $("#simple_input").val()
