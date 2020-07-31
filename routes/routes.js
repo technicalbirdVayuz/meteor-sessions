@@ -16,6 +16,13 @@ FlowRouter.route('/b', {
     title: 'Title ' + Utils.absoluteUrl()
 });
 
+FlowRouter.route('/c/:previousPageValue', {
+    action: function(params, queryParams) {
+        BlazeLayout.render('dropdown')
+    },
+    title: 'Title ' + Utils.absoluteUrl()
+});
+
 
 
 if(Meteor.isClient){

@@ -18,6 +18,11 @@ Template.hello.helpers({
 
 
 Template.hello.events({
+	"click #submit_btn_1":function(event){
+		event.preventDefault();
+		var inputValue = $("#simple_input_1").val();
+		FlowRouter.go("/c/" +inputValue);
+	},
 	"click #delete_task":function(event){
 		event.preventDefault();
 	
