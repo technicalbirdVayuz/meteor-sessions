@@ -1,18 +1,17 @@
 <template name="hello">
-   <!-- Todo
+   Todo
    <br>
-   {{#each fetch_all_posts}}
-   	<input checked type="checkbox" >
-   	   {{name}} 
-	   <button id="btn_in_loop">Edit</button> 
-	   <button id="delete_task">Delete</button> <br>
-   {{/each}}
-   <input name="abcd" type="text" id="simple_input">
-   <button id="submit_btn">Submit<span class="display_hidden" id="loading_text"> (Loading) </span></button>
+   <!-- <ul> -->
+      {{#each fetch_all_posts}}
+           <li> {{name}}</li>  
 
- -->
+           - Created By: 
 
-<input name="abcd" type="text" id="simple_input_1" placeholder="New">
-   <button id="submit_btn_1">Submit</button>
+           {{#each fetch_user_name user_id}} 
+                {{name}} 
+           {{/each}}
+      {{/each}}
+   <!-- </ul> -->
+ 
 
 </template>

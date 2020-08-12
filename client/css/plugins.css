@@ -1,0 +1,1110 @@
+
+/*------ date------------------------------------------------*/
+
+.daterangepicker {
+    position: absolute;
+    color: inherit;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    width: 506px!important;
+    max-width: none;
+    padding: 10px 10px 0;
+    margin-top: 7px;
+    top: 100px;
+    left: 20px;
+    z-index: 12123;
+    display: none;
+    font-family: arial;
+    font-size: 15px;
+    line-height: 1em
+}
+
+.daterangepicker.opensleft:after {
+    right: 10px
+}
+
+.daterangepicker.openscenter:after,
+.daterangepicker.openscenter:before {
+    left: 0;
+    right: 0;
+    width: 0;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.daterangepicker.opensright:before {
+    left: 100%;
+    margin-left: -39px
+}
+
+.daterangepicker.opensright:after {
+    left: 100%;
+    margin-left: -40px
+}
+
+.daterangepicker.drop-up {
+    margin-top: -7px
+}
+
+.daterangepicker.drop-up:after,
+.daterangepicker.drop-up:before {
+    top: initial;
+    bottom: -7px;
+    border-bottom: initial;
+    border-top: 7px solid #ccc
+}
+
+.daterangepicker.drop-up:after {
+    bottom: -6px;
+    border-top: 6px solid #fff
+}
+
+.daterangepicker.single .daterangepicker .ranges,
+.daterangepicker.single .drp-calendar {
+    float: none
+}
+
+.daterangepicker.single .drp-selected {
+    display: none
+}
+
+.daterangepicker.show-calendar .drp-buttons,
+.daterangepicker.show-calendar .drp-calendar {
+    display: block
+}
+
+.daterangepicker .drp-buttons .btn:after,
+.daterangepicker.auto-apply .drp-buttons {
+    display: none
+}
+
+.daterangepicker .drp-calendar {
+    display: none;
+    max-width: 270px
+}
+
+.daterangepicker .drp-calendar.left {
+    padding: 8px 0 8px 8px
+}
+
+.daterangepicker .drp-calendar.right {
+    padding: 8px
+}
+
+.daterangepicker .drp-calendar.single .calendar-table {
+    border: 0
+}
+
+.daterangepicker .calendar-table .month {
+    padding-bottom: 6px;
+    padding-top: 6px
+}
+
+.daterangepicker .calendar-table .next span,
+.daterangepicker .calendar-table .prev span {
+    color: #fff;
+    border: solid #666;
+    border-width: 0 1px 1px 0;
+    border-radius: 0;
+    display: inline-block;
+    padding: 3px
+}
+
+.daterangepicker .calendar-table .next span {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg)
+}
+
+.daterangepicker .calendar-table .prev span {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg)
+}
+
+.daterangepicker .calendar-table td,
+.daterangepicker .calendar-table th {
+    text-align: center;
+    vertical-align: middle;
+    min-width: 32px;
+    width: 32px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #666
+}
+
+.daterangepicker .calendar-table {
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background-color: #fff
+}
+
+.daterangepicker .calendar-table table {
+    width: 100%;
+    margin: 0;
+    border-spacing: 0;
+    border-collapse: collapse
+}
+
+.daterangepicker td.available:hover,
+.daterangepicker th.available:hover {
+    background-color: #eee;
+    border-color: transparent;
+    color: inherit
+}
+
+.daterangepicker td.week,
+.daterangepicker th.week {
+    font-size: 80%;
+    color: #ccc
+}
+
+.daterangepicker td.in-range,
+.daterangepicker td.off,
+.daterangepicker td.off.end-date,
+.daterangepicker td.off.in-range,
+.daterangepicker td.off.start-date {
+    background-color: #fff;
+    border-color: transparent;
+    color: #999
+}
+
+.daterangepicker td.in-range {
+    background-color: #ebf4f8;
+    border-radius: 0
+}
+
+.daterangepicker td.start-date {
+    border-radius: 4px 0 0 4px
+}
+
+.daterangepicker td.end-date {
+    border-radius: 0 4px 4px 0
+}
+
+.daterangepicker td.start-date.end-date {
+    border-radius: 4px
+}
+
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+    background-color: #357ebd;
+    border-color: transparent;
+    color: #fff
+}
+
+.daterangepicker th.month {
+    width: auto
+}
+
+.daterangepicker .calendar-table th.month {
+    color: #999
+}
+
+.daterangepicker option.disabled,
+.daterangepicker td.disabled {
+    color: #999;
+    cursor: not-allowed;
+    text-decoration: line-through
+}
+
+.daterangepicker select.monthselect,
+.daterangepicker select.yearselect {
+    font-size: 12px;
+    padding: 1px;
+    height: auto;
+    margin: 0;
+    cursor: default
+}
+
+.daterangepicker select.monthselect {
+    margin-right: 2%;
+    width: 56%
+}
+
+.daterangepicker select.yearselect {
+    width: 40%
+}
+
+.daterangepicker select.ampmselect,
+.daterangepicker select.hourselect,
+.daterangepicker select.minuteselect,
+.daterangepicker select.secondselect {
+    width: 50px;
+    margin: 0 auto;
+    background: #eee;
+    border: 1px solid #eee;
+    padding: 2px;
+    outline: 0;
+    font-size: 12px
+}
+
+.daterangepicker .calendar-time {
+    text-align: center;
+    margin: 4px auto 0;
+    line-height: 30px;
+    position: relative
+}
+
+.daterangepicker .calendar-time select.disabled {
+    color: #ccc;
+    cursor: not-allowed
+}
+
+.daterangepicker .drp-buttons {
+    clear: both;
+    text-align: right;
+    padding: 12px 8px;
+    border-top: 1px solid #eee;
+    display: none;
+    line-height: 12px;
+    vertical-align: middle
+}
+
+.daterangepicker .drp-selected {
+    display: inline-block;
+    font-size: 11px;
+    padding-right: 8px;
+    font-style: italic;
+    color: #666;
+    font-weight: 400
+}
+
+.daterangepicker .drp-buttons .btn {
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    height: inherit!important;
+    line-height: inherit!important;
+    padding: 7px 22px!important;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #fff!important;
+    box-shadow: none
+}
+
+.daterangepicker .drp-buttons .btn.btn-primary {
+    background: #18458b
+}
+
+.daterangepicker.show-ranges .drp-calendar.left {
+    border-left: 1px solid #ddd
+}
+
+.daterangepicker .ranges {
+    float: none;
+    text-align: left;
+    margin: 0
+}
+
+.daterangepicker.show-calendar .ranges {
+    margin-top: 8px
+}
+
+.daterangepicker .ranges ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%
+}
+
+.daterangepicker .ranges li {
+    font-size: 12px;
+    padding: 8px 12px;
+    cursor: pointer
+}
+
+.daterangepicker .ranges li:hover {
+    background-color: #eee
+}
+
+.daterangepicker .ranges li.active {
+    background-color: #08c;
+    color: #fff
+}
+
+@media (min-width:540px) {
+    .daterangepicker {
+        width: auto
+    }
+    .daterangepicker .ranges ul {
+        width: 140px
+    }
+    .daterangepicker.single .ranges ul {
+        width: 100%
+    }
+    .daterangepicker.single .drp-calendar.left {
+        clear: none
+    }
+    .daterangepicker.ltr .drp-calendar,
+    .daterangepicker.ltr .ranges,
+    .daterangepicker.single.ltr .drp-calendar,
+    .daterangepicker.single.ltr .ranges {
+        float: left
+    }
+    .daterangepicker.single.rtl .drp-calendar,
+    .daterangepicker.single.rtl .ranges {
+        float: right
+    }
+    .daterangepicker.ltr {
+        direction: ltr;
+        text-align: left
+    }
+    .daterangepicker.ltr .drp-calendar.left {
+        clear: left;
+        margin-right: 0
+    }
+    .daterangepicker.ltr .drp-calendar.left .calendar-table {
+        border-right: none;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0
+    }
+    .daterangepicker.ltr .drp-calendar.right {
+        margin-left: 0
+    }
+    .daterangepicker.ltr .drp-calendar.right .calendar-table {
+        border-left: none;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0
+    }
+    .daterangepicker.ltr .drp-calendar.left .calendar-table {
+        padding-right: 8px
+    }
+    .daterangepicker.rtl {
+        direction: rtl;
+        text-align: right
+    }
+    .daterangepicker.rtl .drp-calendar.left {
+        clear: right;
+        margin-left: 0
+    }
+    .daterangepicker.rtl .drp-calendar.left .calendar-table {
+        border-left: none;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0
+    }
+    .daterangepicker.rtl .drp-calendar.right {
+        margin-right: 0
+    }
+    .daterangepicker.rtl .drp-calendar.right .calendar-table {
+        border-right: none;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0
+    }
+    .daterangepicker.rtl .drp-calendar.left .calendar-table {
+        padding-left: 12px
+    }
+    .daterangepicker.rtl .drp-calendar,
+    .daterangepicker.rtl .ranges {
+        text-align: right;
+        float: right
+    }
+}
+
+@media (min-width:730px) {
+    .daterangepicker .ranges {
+        width: auto
+    }
+    .daterangepicker.ltr .ranges {
+        float: left
+    }
+    .daterangepicker.rtl .ranges {
+        float: right
+    }
+    .daterangepicker .drp-calendar.left {
+        clear: none!important
+    }
+}
+
+
+/* Ion.RangeSlider
+// css version 2.0.3
+// © 2013-2014 Denis Ineshin | IonDen.com
+// ===================================================================================================================*/
+
+
+/* =====================================================================================================================
+// RangeSlider */
+
+.irs,
+.irs-line {
+    position: relative;
+    display: block
+}
+
+.irs {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.irs-line {
+    overflow: hidden;
+    outline: 0!important;
+    background: #eee
+}
+
+.irs-line-left,
+.irs-line-mid,
+.irs-line-right {
+    position: absolute;
+    display: block;
+    top: 0
+}
+
+.irs-line-left {
+    left: 0;
+    width: 11%
+}
+
+.irs-line-mid {
+    left: 9%;
+    width: 82%
+}
+
+.irs-line-right {
+    right: 0;
+    width: 11%
+}
+
+.irs-bar,
+.irs-bar-edge {
+    position: absolute;
+    display: block;
+    left: 0
+}
+
+.irs-bar {
+    width: 0
+}
+
+.irs-bar-edge {
+    top: 0;
+    border-radius: 10px 0 0 10px
+}
+
+.irs-shadow {
+    position: absolute;
+    display: none;
+    left: 0;
+    width: 0
+}
+
+.irs-slider {
+    position: absolute;
+    display: block;
+    cursor: default;
+    z-index: 1
+}
+
+.irs-slider.type_last {
+    z-index: 2
+}
+
+.irs-min {
+    left: 0
+}
+
+.irs-from,
+.irs-max,
+.irs-min,
+.irs-single,
+.irs-to {
+    position: absolute;
+    display: block;
+    cursor: default
+}
+
+.irs-max {
+    right: 0
+}
+
+.irs-from,
+.irs-single,
+.irs-to {
+    top: 0;
+    left: 0;
+    white-space: nowrap
+}
+
+.irs-grid {
+    position: absolute;
+    display: none;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px
+}
+
+.irs-with-grid .irs-grid {
+    display: block
+}
+
+.irs-grid-pol {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 8px;
+    background: #000
+}
+
+.irs-grid-pol.small {
+    height: 4px
+}
+
+.irs-grid-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 9px;
+    line-height: 9px;
+    padding: 0 3px;
+    color: #000
+}
+
+.irs-disable-mask {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -1%;
+    width: 102%;
+    height: 100%;
+    cursor: default;
+    background: 0 0;
+    z-index: 2
+}
+
+.lt-ie9 .irs-disable-mask {
+    background: #000;
+    filter: alpha(opacity=0);
+    cursor: not-allowed
+}
+
+.irs-disabled {
+    opacity: .4
+}
+
+.irs-hidden-input {
+    position: absolute!important;
+    display: block!important;
+    top: 0!important;
+    left: 0!important;
+    width: 0!important;
+    height: 0!important;
+    font-size: 0!important;
+    line-height: 0!important;
+    padding: 0!important;
+    margin: 0!important;
+    outline: 0!important;
+    z-index: -9999!important;
+    background: 0 0!important;
+    border-style: solid!important;
+    border-color: transparent!important
+}
+
+
+/* Ion.RangeSlider, Nice Skin
+// css version 2.0.3
+// © Denis Ineshin, 2014    https://github.com/IonDen
+// ===================================================================================================================*/
+
+
+/* =====================================================================================================================
+// Skin details */
+
+.irs {
+    height: 40px
+}
+
+.irs-with-grid {
+    height: 60px
+}
+
+.irs-line {
+    top: 25px;
+    background: #eee;
+    border-radius: 4px
+}
+
+.irs-line,
+.irs-line-left {
+    height: 8px
+}
+
+.irs-line-mid {
+    height: 8px;
+    background-position: 0 0
+}
+
+.irs-bar,
+.irs-line-right {
+    height: 8px
+}
+
+.irs-bar {
+    top: 25px;
+    background: #eee
+}
+
+.irs-bar-edge {
+    top: 25px;
+    height: 8px;
+    width: 11px
+}
+
+.lt-ie9 .irs-shadow {
+    filter: alpha(opacity=15)
+}
+
+.irs-slider {
+    width: 18px;
+    height: 18px;
+    top: 20px;
+    background: #ccc;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.irs-slider:before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    left: 50%;
+    top: 50%;
+    margin: -6px 0 0 -6px;
+    z-index: 2;
+    border-radius: 100%;
+   
+}
+
+.irs-slider.state_hover,
+.irs-slider:hover {
+    background-position: 0 -150px
+}
+
+.irs-from,
+.irs-max,
+.irs-min,
+.irs-single,
+.irs-to {
+    font-size: 11px;
+    line-height: 1.333;
+    text-shadow: none;
+    -moz-border-radius: 3px;
+    border-radius: 3px
+}
+
+.irs-max,
+.irs-min {
+    top: -2px;
+    background: rgba(0, 0, 0, .1);
+    color: #999;
+    padding: 2px 3px
+}
+
+.lt-ie9 .irs-max,
+.lt-ie9 .irs-min {
+    background: #ccc
+}
+
+.irs-from,
+.irs-single,
+.irs-to {
+    color: #fff;
+    padding: 2px 7px;
+    background: rgba(6, 27, 65, .5)
+}
+
+.lt-ie9 .irs-from,
+.lt-ie9 .irs-single,
+.lt-ie9 .irs-to {
+    background: #999
+}
+
+.irs-grid-pol {
+    background: #99a4ac
+}
+
+.irs-grid-text {
+    color: #99a4ac
+}
+
+body .pac-container {
+    border-radius: 0 0 4px 4px;
+    box-shadow: none;
+    border: 1px solid #eee;
+    border-top: 0;
+    box-sizing: content-box;
+    margin-top: -2px;
+    z-index: 1005!important;
+}
+
+.main-search-input .pac-container {
+    left: 0!important;
+    top: 54px!important
+}
+
+#autocomplete-input {
+    position: relative;
+    z-index: 5
+}
+
+,
+#autocomplete-input a {
+    z-index: 101
+}
+
+.pac-logo:after {
+    display: none
+}
+
+.pac-item {
+    cursor: pointer;
+    padding: 8px 6px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+    border-top: 1px solid #eee;
+    font-size: 11px;
+    color: #999;
+    border-radius: 6px
+}
+
+.pac-matched {
+    font-weight: 400
+}
+
+.pac-item-query {
+    font-size: 13px;
+    padding-right: 3px;
+    color: #999
+}
+
+.pac-item:hover,
+.pac-item:hover .pac-icon:before,
+.pac-item:hover .pac-item-query {
+    color: #fff
+}
+
+.pac-icon {
+    width: 15px;
+    height: 20px;
+    margin-right: 7px;
+    display: inline-block;
+    vertical-align: top;
+    background: 0 0;
+    position: relative
+}
+
+.pac-icon:before {
+    position: absolute;
+    font-family: Font Awesome\ 5 Pro;
+    content: "\f3c5";
+    top: -6px;
+    left: 4px;
+    font-size: 14px
+}
+
+
+/*************************************************************************************************/
+
+
+/* Global - Base																				 */
+
+
+/*************************************************************************************************/
+
+.ideaboxWeather {
+    width: 100%;
+    padding: 25px 30px 20px;
+    box-sizing: border-box;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2;
+    background-color: #3EAAFD !important;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3EAAFD), to(#49CEFF))!important;
+    background: -webkit-linear-gradient(top, #3EAAFD, #49CEFF)!important;
+    color: #FFF;
+    line-height: 1;
+}
+
+.ideaboxWeather h1 {
+    font-size: 24px;
+    display: block;
+    padding: 30px 0;
+    text-align: left;
+}
+
+.ideaboxWeather .ow-today {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.ideaboxWeather:after {
+    content: '';
+    position: absolute;
+    top: -70px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border-radius: 100%;
+    opacity: 0.2;
+}
+
+.ideaboxWeather .ow-today>span {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+.ideaboxWeather .ow-today>span>img {
+    width: 100%;
+    height: auto;
+    -webkit-box-reflect: below -20px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(250, 250, 250, .7)));
+}
+
+.ideaboxWeather .ow-today h2 {
+    font-size: 36px;
+    font-weight: 400;
+    float: left;
+    text-align: left;
+    padding-left: 120px;
+    box-sizing: border-box;
+}
+
+.ideaboxWeather .ow-today h2>span {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 15px 0 10px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.ideaboxWeather .ow-today h2>b {
+    display: block;
+    font-size: 16px;
+}
+
+.ow-small .ow-today>span {
+    display: block;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+}
+
+.ow-small .ow-today>span>img {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+.ow-small .ow-today>h2 {
+    position: relative;
+    padding: 10px;
+    text-align: center;
+}
+
+.ow-border {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.ideaboxWeather .ow-days {
+    width: 100%;
+    border-top: solid 1px rgba(255, 255, 255, 0.2);
+    padding: 6px 0;
+    font-size: 100%;
+    overflow: hidden;
+    float: left;
+}
+
+.ideaboxWeather .ow-days span {
+    display: block;
+    width: 40%;
+    float: left;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    top: 4px;
+}
+
+.ideaboxWeather .ow-days p {
+    display: block;
+    width: 60%;
+    float: right;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    color: #fff !important;
+}
+
+.ideaboxWeather .ow-days>p>img {
+    width: 20px;
+    display: inline-block;
+    float: right;
+}
+
+.ideaboxWeather .ow-days>p>b {
+    font-weight: bold;
+    display: inline-block;
+    float: right;
+    margin-right: 10px;
+    font-size: 110%;
+}
+
+.ideaboxWeather .ow-dayssmall {
+    width: 16.666667%;
+    border-top: solid 1px rgba(255, 255, 255, 0.2);
+    padding: 6px 0;
+    font-size: 100%;
+    overflow: hidden;
+    float: left;
+    text-align: center;
+}
+
+.ideaboxWeather .ow-dayssmall>span {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ideaboxWeather .ow-dayssmall>p {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 50px;
+}
+
+.ideaboxWeather .ow-dayssmall>p>img {
+    width: 60%;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+
+/*
+ * Container style
+ */
+
+.ps {
+    overflow: hidden!important;
+    overflow-anchor: none;
+    -ms-overflow-style: none;
+    touch-action: auto;
+    -ms-touch-action: auto
+}
+
+.ps__rail-x,
+.ps__rail-y {
+    display: none;
+    opacity: 0;
+    transition: background-color .2s linear, opacity .2s linear;
+    -webkit-transition: background-color .2s linear, opacity .2s linear;
+    position: absolute
+}
+
+.ps__rail-x {
+    height: 15px;
+    bottom: 0
+}
+
+.ps__rail-y {
+    width: 15px;
+    right: 0
+}
+
+.ps--active-x>.ps__rail-x,
+.ps--active-y>.ps__rail-y {
+    display: block;
+    background-color: transparent
+}
+
+.ps--focus>.ps__rail-x,
+.ps--focus>.ps__rail-y,
+.ps--scrolling-x>.ps__rail-x,
+.ps--scrolling-y>.ps__rail-y,
+.ps:hover>.ps__rail-x,
+.ps:hover>.ps__rail-y {
+    opacity: .6
+}
+
+.ps .ps__rail-x.ps--clicking,
+.ps .ps__rail-x:focus,
+.ps .ps__rail-x:hover,
+.ps .ps__rail-y.ps--clicking,
+.ps .ps__rail-y:focus,
+.ps .ps__rail-y:hover {
+    background-color: #eee;
+    opacity: .9
+}
+
+.ps__thumb-x,
+.ps__thumb-y {
+    background-color: #aaa;
+    border-radius: 6px;
+    position: absolute
+}
+
+.ps__thumb-x {
+    height: 6px;
+    bottom: 2px;
+    transition: background-color .2s linear, height .2s ease-in-out;
+    -webkit-transition: background-color .2s linear, height .2s ease-in-out
+}
+
+.ps__thumb-y {
+    transition: background-color .2s linear, width .2s ease-in-out;
+    -webkit-transition: background-color .2s linear, width .2s ease-in-out;
+    width: 6px;
+    right: 2px
+}
+
+.ps__rail-x.ps--clicking .ps__thumb-x,
+.ps__rail-x:focus>.ps__thumb-x,
+.ps__rail-x:hover>.ps__thumb-x {
+    background-color: #999;
+    height: 11px
+}
+
+.ps__rail-y.ps--clicking .ps__thumb-y,
+.ps__rail-y:focus>.ps__thumb-y,
+.ps__rail-y:hover>.ps__thumb-y {
+    background-color: #999;
+    width: 11px
+}
+
+@supports (-ms-overflow-style:none) {
+    .ps {
+        overflow: auto!important
+    }
+}
+
+@media screen and (-ms-high-contrast:active),
+(-ms-high-contrast:none) {
+    .ps {
+        overflow: auto!important
+    }
+}

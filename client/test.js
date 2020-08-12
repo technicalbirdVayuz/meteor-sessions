@@ -1,83 +1,69 @@
-import { Todo } from './../collections/collections';
+import { User,Todo } from './../collections/collections.js';
+const axios = require('axios').default;
+ 
+
+// const TodoClientSide  = new Mongo.Collection(null);
+
 Template.hello.onRendered(function(){
-	Meteor.subscribe("fetch_all_tasks")
+  Meteor.subscribe("fetch_all_posts");
+  // fetchAllTodoList();
+
 })
+
+
+// function fetchAllTodoList(){
+//   axios.get('/fetch_All_tasks')
+//   .then(function (response) {
+//     // handle success
+//     console.log(response.data.result);
+//     for(var i=0;i<response.data.result.length;i++){
+//       var name = response.data.result[i].name;
+//       TodoClientSide._collection.insert({name:name,score:i});      
+//     }
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     console.log(error);
+//   })
+//   .then(function () {
+//     // always executed
+//   });
+// }
+
+
 Template.hello.helpers({
+  fetch_all_posts:function(){
+    return Todo.find({}).fetch();
+  }, 
+  fetch_user_name:function(user_id){
+    Meteor.subscribe("fetch_user_details_based_on_user_id", user_id)
+    var userDetails = User.find({user_id:user_id}).fetch();
+ 
+    return userDetails;
+    
+  }
 
-	fetch_all_posts:function(){
-		var data = Todo.find({}).fetch()
-		for(var i=0;i<data.length;i++){
-			data[i].abcd = 0;
-		}
-		console.log(data);
-		console.log("data");
-		return data;
-		},
 
 })
 
 
-Template.hello.events({
-	"click #submit_btn_1":function(event){
-		event.preventDefault();
-		var inputValue = $("#simple_input_1").val();
-		FlowRouter.go("/c/" +inputValue);
-	},
-	"click #delete_task":function(event){
-		event.preventDefault();
-	
-		var obj = {};
-		obj._id = this._id;
-		
-		Meteor.call("delete_task", obj,function(error,result){
-				if(error){
-					alert("Something went wrong!");
-				}else{
-					// $("#loading_text").addClass("display_hidden");
-					// $("#simple_input").val("")	
-				}
-			});
-	},
-	"click #btn_in_loop":function(event){
-		event.preventDefault();
-		console.log(this);
-	
-		var obj = {};
-		obj._id = this._id;
-		var newValue = prompt("Enter new value");
+// Template.hello.events({
+//   "click #delete_task":function(events){
+//       events.preventDefault();
+//       var name= this.name;
+//       Meteor.call("delete_task_using_name",name,function(error,result){
+//         if(error){
+//           alert("Something went wrong");
+//         }else{
+//           TodoClientSide._collection.remove({name: name});
+//           alert("Deletedd Successfully");
+//         }
+//       })
 
-		obj.name = newValue;
-		Meteor.call("update_task", obj,function(error,result){
-				if(error){
-					alert("Something went wrong!");
-				}else{
-					// $("#loading_text").addClass("display_hidden");
-					// $("#simple_input").val("")	
-				}
-			});
-	},
-	"click #submit_btn":function(event){
-		event.preventDefault();
-		var input = $("#simple_input").val()
-		if(input == ""){
-			alert("Please enter the task name");
-		}else{
-			alert("Entered Task name: " + input);
-			var obj ={};
-			obj.task_name = input;
-			$("#loading_text").removeClass("display_hidden");
+//     }
+// })
 
-			Meteor.call("add_task", obj,function(error,result){
-				if(error){
-					alert("Something went wrong!");
-				}else{
-					$("#loading_text").addClass("display_hidden");
-					$("#simple_input").val("")	
-				}
-			});
-					
-			
-		}
-	}
 
-})
+
+
+

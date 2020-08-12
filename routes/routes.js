@@ -15,6 +15,12 @@ FlowRouter.route('/b', {
     },
     title: 'Title ' + Utils.absoluteUrl()
 });
+FlowRouter.route('/new_page', {
+    action: function(params, queryParams) {
+        BlazeLayout.render('new_page')
+    },
+    title: 'Title ' + Utils.absoluteUrl()
+});
 
 FlowRouter.route('/c/:previousPageValue', {
     action: function(params, queryParams) {
